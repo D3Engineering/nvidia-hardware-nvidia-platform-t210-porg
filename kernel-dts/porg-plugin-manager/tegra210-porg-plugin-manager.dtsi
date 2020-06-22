@@ -164,8 +164,8 @@
                                 "enable-tegra-wdt";
                         override@0 {
                                 target = <&soft_wdt>;
-                                _overlay_ {
-                                        status = "disabled";
+				_overlay_ {
+					status = "disabled";
                                 };
                         };
                 };
