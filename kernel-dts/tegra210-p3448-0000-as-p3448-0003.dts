@@ -1,7 +1,7 @@
 /*
- * arch/arm64/boot/dts/tegra210-p3448-0000-p3449-0000-b00.dts
+ * tegra210-p3448-0000-as-p3448-0003.dts
  *
- * Copyright (c) 2018-2021, NVIDIA CORPORATION.  All rights reserved.
+ * Copyright (c) 2020, NVIDIA CORPORATION.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,8 +26,8 @@
 #include "porg-platforms/tegra210-porg-p3448-emc-a00.dtsi"
 
 / {
-	model = "NVIDIA Jetson Nano Developer Kit";
-	compatible = "nvidia,p3449-0000-b00+p3448-0000-b00", "nvidia,jetson-nano", "nvidia,tegra210";
+	model = "NVIDIA Jetson Nano As Nano Lite Developer Kit";
+	compatible = "nvidia,p3449-0000-b00+p3448-0000-b00", "nvidia,jetson-nano-as-nano-lite", "nvidia,jetson-nano", "nvidia,tegra210";
 	nvidia,dtsfilename = __FILE__;
 
 	spi@70410000 {
@@ -67,5 +67,29 @@
 		"",     "",     "",     "",     "",     "",     "GPIO09",     "",     "",     "",
 		"",     "",     "",     "",     "",     "",     "",     "",     "",     "",
 		"",     "",     "SPI1_CS1",     "",     "",     "",     "",     "",     "",     "";
+	};
+	xudc@700d0000 {
+		status = "disabled";
+	};
+
+	extcon {
+		extcon@0 {
+			status = "disabled";
+		};
+	};
+
+	host1x {
+		dc@54240000 {
+			status = "disabled";
+		};
+		sor {
+			status = "disabled";
+			dp-display {
+				status = "disabled";
+			};
+		};
+		dpaux {
+			status = "disabled";
+		};
 	};
 };
